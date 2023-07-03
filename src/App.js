@@ -1,23 +1,25 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import {RouterProvider} from 'react-router-dom'
+import routes from './routes'
 
-function App() {
+
+
+
+/*
+const routes = createRoutesFromElements(
+  <Route path="/" element={<div>Hello World</div>}>
+    <Route path="/auth/login" lazy={() => import('./components/auth/login/Login')} />
+    <Route path="/auth/register" lazy={() => import('./components/auth/register/Register')} />
+  </Route>
+);
+*/
+
+const App = () => {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <RouterProvider router={routes} />
     </div>
   );
 }
